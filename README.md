@@ -8,7 +8,7 @@ Pode-se utilizar formulário normal em HTML puro se quiser:
 	<script src="./assets/js/jquery.min.js"></script>
 	<script src="./assets/js/AjaxForm.min.js"></script>
 
-## UPLOAD.PHP
+## ./lib/upload.php
 O conceito do arquivo é muito simples.
 É varrer as variáveis $_FILE e organizando em array, e analisando antes de enviar  ao servidor.
 O Script está bem comentado e  auto-explicativo.
