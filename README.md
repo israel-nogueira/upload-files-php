@@ -1,5 +1,5 @@
 # PHP - UPLOAD FILES
-Script simples e prático para um upload unitário ou múltiplos uploads.
+Script simples e prático para um upload unitário ou múltiplos arquivos.
 
 ## Instalação
 Aqui eu importei esses arquivos, porém não é regra.
