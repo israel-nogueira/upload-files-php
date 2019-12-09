@@ -1,0 +1,25 @@
+	<script type="text/javascript" src="./assets/js/jquery.min.js"></script>
+	<script type="text/javascript" src="./assets/js/AjaxForm.min.js"></script>
+
+	<form id="UploadThumbmails"  action="./lib/upload.php" method="post" enctype="multipart/form-data" name="formUpload">
+		<input name="arquivo[]" 	accept="image/jpg,image/png,image/jpeg,image/gif" type="file" multiple>
+		<input type="hidden" name="nome_user" value="João da Silva">
+		<input type="hidden" name="id_user" value="457">
+		<button type="submit" id="enviar_arquivos" >Enviar arquivo</button>
+	</form>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#UploadThumbmails").ajaxForm({
+				beforeSend: function(xhr) {
+					console.log("iniciando upload")
+				},
+				uploadProgress: function(event, position, total, percentComplete, myForm) {
+					console.log(percentComplete + "%");
+				},
+				complete: function(e) {
+					console.log(e.responseText);
+				}
+			})	
+		})
+	</script>
