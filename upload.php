@@ -40,9 +40,9 @@
 				 $_RETURN_FILES = Array();
 
 				##########################################################################################################  
-				# EXTENSÕES PROIBIDAS  
+				# EXTENSÕES PERMITIDAS  
 				##########################################################################################################
-				 $_EXTENSION_DENIED = Array("php","html","js","bat","sh","exe");
+				 $_EXTENSION_ALLOWED = Array("jpg","png","doc","pdf");
 
 				##########################################################################################################  
 				# VARREMOS OS ARQUIVOS  
@@ -60,7 +60,7 @@
 								$nome 		= url_amigavel_filename($__FILE__["name"][$i]);
 								$ext		= strtolower(substr($nome,(strripos($nome,'.')+1)));
 								$ext		= str_replace(array("jpeg"),array("jpg"),$ext);
-								if(in_array($ext, $_EXTENSION_DENIED)) {
+								if(!in_array($ext, $_EXTENSION_ALLOWED)) {
 									echo json_encode(array('status'=>'falha','response'=>'Formato ilegal:"'.$ext.'"', 'error'=>'move_uploaded_file','linha'=>__LINE__)); 
 									exit;
 								}
@@ -120,7 +120,7 @@
 						##########################################################################################################  
 						# VERIFICA   
 						##########################################################################################################
-						if(in_array($ext, $_EXTENSION_DENIED)) {
+						if(!in_array($ext, $_EXTENSION_ALLOWED)) {
 							echo json_encode(array('status'=>'falha','response'=>'Formato ilegal:"'.$ext.'"', 'error'=>'move_uploaded_file','linha'=>__LINE__)); 
 							exit;
 						}
